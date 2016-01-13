@@ -1,1 +1,6 @@
-db_connect.php
+<?php
+
+	session_start();
+	require_once("meekrodb.class.php");
+
+?>

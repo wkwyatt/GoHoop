@@ -2,3 +2,118 @@
 * {
   color: black;
 }
+
+/* line 6, ../compass/sass/style.scss */
+body {
+  background: url("../images/basketballbg.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* line 15, ../compass/sass/style.scss */
+.login-wrapper {
+  padding: 40px;
+  width: 274px;
+  background-color: #F7F7F7;
+  margin: 250px auto 10px;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+/* line 23, ../compass/sass/style.scss */
+.login-wrapper h1 {
+  font-weight: 100;
+  text-align: center;
+  font-size: 2.3em;
+}
+/* line 28, ../compass/sass/style.scss */
+.login-wrapper input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+/* line 34, ../compass/sass/style.scss */
+.login-wrapper input[type=text], .login-wrapper input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+/* line 48, ../compass/sass/style.scss */
+.login-wrapper input[type=text]:hover, .login-wrapper input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+/* line 55, ../compass/sass/style.scss */
+.login-wrapper #login-header {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 300;
+}
+/* line 61, ../compass/sass/style.scss */
+.login-wrapper #login-form {
+  text-align: center;
+}
+/* line 64, ../compass/sass/style.scss */
+.login-wrapper .login {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+}
+/* line 72, ../compass/sass/style.scss */
+.login-wrapper .login-submit {
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  background-color: #4d90fe;
+}
+/* line 77, ../compass/sass/style.scss */
+.login-wrapper .login-submit:hover {
+  border: 0px;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  background-color: #357ae8;
+}
+/* line 82, ../compass/sass/style.scss */
+.login-wrapper .login-submit a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+/* line 90, ../compass/sass/style.scss */
+.login-wrapper .login-submit a:hover {
+  opacity: 1;
+}
+/* line 93, ../compass/sass/style.scss */
+.login-wrapper .login-help {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 20px;
+}
+/* line 98, ../compass/sass/style.scss */
+.login-wrapper .login-help a {
+  padding: 0px 10px;
+}
