@@ -2,10 +2,10 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html ng-app="goHoopApp">
 <head>
 	<title>GoHoop</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<?php include('inc/head.php') ?>
 </head>
 <body ng-controller="loginCntrl">
 	<div class="login-wrapper">
@@ -20,7 +20,7 @@
 				<a href="#">Register</a><a href="#">Forgot Password</a>
 			</div>
 		</div>
-		<div id="signup-form" ng-show="signup">
+		<!-- <div id="signup-form" ng-show="signup">
 			<form action="signup.php" method="post">
 				<input type="text" name="email" value="" placeholder="Email">
 				<input type="text" name="user" value="" placeholder="Username">
@@ -31,7 +31,7 @@
 					<a href="#">Login</a><a href="#">Forgot Password</a>
 				</div>
 			</form>
-		</div>
+		</div> -->
 	</div>
 </body>
 </html>
