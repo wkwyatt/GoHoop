@@ -7,6 +7,9 @@ Basketball players who like to play pick up games sometimes have a hard time fin
 ## Existing Features
  - Login / Signup Page for users to enter the site
 
+## Screenshots
+![][login-pic]
+
  ## Code
  I use AngularJS to show or hide the login and register page based on the button the user clicks
  >      <div id="login-form" ng-hide="signup">
@@ -28,3 +31,5 @@ I didn't include the local file to Angular or JQuery, make sure to add these CDN
 * [Angular](https://developers.google.com/speed/libraries/)
 	* https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js
 
+
+[login-pic]:(https://github.com/wkwyatt/GoHoop/blob/gh-readme/screenshots/login.png)
