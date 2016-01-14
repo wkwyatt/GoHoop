@@ -23,6 +23,8 @@ Basketball players who like to play pick up games sometimes have a hard time fin
 
 ## Links
 I didn't include the local file to Angular or JQuery, make sure to add these CDNs
-* [JQuery](https://developers.google.com/speed/libraries/)https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js
-* [Angular](https://developers.google.com/speed/libraries/)https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js
+* [JQuery](https://developers.google.com/speed/libraries/)
+	* https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js
+* [Angular](https://developers.google.com/speed/libraries/)
+	* https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js
 
