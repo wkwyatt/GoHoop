@@ -34,15 +34,19 @@
 		$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 		try {
-			DB::query('SELECT 1 FROM users WHERE name =%s0 AND pass =%s1', $username, $hashed_password);
+			DB::query('SELECT * FROM users WHERE name =%s0 AND pass =%s1', $username, $hashed_password);
 		} catch(MeekroDBException $e){
-			header('location: /?error=yes');
+			header('location: register.php?error=yes');
 			exit;
 		}
 
 		$_SESSION['username'] = $username;
 		$_SESSION['uid'] = DB::insertId();
-		header('location: /?login=success');
+		header('location: index.php?login=success');
+	}
+
+	if($_POST['logout'] = "true"){
+		session_destroy();
 	}
 
 ?>

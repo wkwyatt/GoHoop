@@ -1,4 +1,14 @@
 <?php
+include 'inc/db_connect.php';
+if(!isset($_SESSION['username'])){ 
+	header("location: register.php"); 
+	exit;
+}
+
+if($_GET['logout'] == 'true') {
+	session_destroy();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -8,30 +18,29 @@
 	<?php include('inc/head.php') ?>
 </head>
 <body ng-controller="loginCntrl">
-	<div class="login-wrapper">
-		<div id="login-header">GoHoop</div> 
-		<div id="login-form" ng-hide="signup">
-			<form action="signup.php" method="post">
-				<input type="text" name="user"  placeholder="Username">
-				<input type="password" name="pass" placeholder="Password">
-				<button type="submit" name="login" class="login login-submit" value="login">Login</button>
-			</form>
-			<div class="login-help">
-				<a href="#">Register</a><a href="#">Forgot Password</a>
+	<?php include 'inc/header.php'; ?>
+	<div ng-controller="">
+		<div id="main" class="hero">
+			<h2>Easily find good basketball runs near you.  Up vote players, runs, and posts. Find somewhere to go hoop!</h2>
+			<button id="post-btn">Post</button>
+		</div>
+		<div class="post-wrapper">
+			<div class="post-content" >
+				<p>Some content</p>
+				<p class="timestamp">DAte time</p>
+				<span class="votes">2</span>
+				<i class="fa fa-chevron-up"></i>
+				<i class="fa fa-chevron-down"></i>
+			</div>
+			<div class="post-content" >
+				<p>Some content</p>
+				<p class="timestamp">DAte time</p>
+				<i class="fa fa-chevron-up"></i>
+				<span class="votes">2</span>
+				<i class="fa fa-chevron-down"></i>
 			</div>
 		</div>
-		<!-- <div id="signup-form" ng-show="signup">
-			<form action="signup.php" method="post">
-				<input type="text" name="email" value="" placeholder="Email">
-				<input type="text" name="user" value="" placeholder="Username">
-				<input type="password" name="password" value="" placeholder="Password">
-				<input type="password" name="confPass" value="" placeholder="Confirm Password">
-				<button type="submit" name="signin" class="login login-submit" value="signin">Signup</button>
-				<div class="login-help">
-					<a href="#">Login</a><a href="#">Forgot Password</a>
-				</div>
-			</form>
-		</div> -->
 	</div>
+	<?php include 'inc/footer.php'; ?>
 </body>
 </html>

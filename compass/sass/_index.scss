@@ -1,0 +1,42 @@
+.hero {
+	width: 90%;
+	margin: 205px auto 50px;
+	padding: 45px;
+	background:rgba(255,255,255,0.9);
+	height: 85px;
+	text-align: center;
+	button {
+		position: relative;
+		margin: 20px auto 0;
+		line-height: inherit;
+		padding: 15px 20px;
+		border-radius: 5px;
+		font-size: 24px;
+		color: white;
+		background-color: $color;
+		border: none;
+	}
+}
+
+.post-wrapper {
+	width: 60%;
+	background-color: #fafafa;
+	margin: 155px auto 0;
+	.post-content {
+		position: relative;
+		height: 75px;
+		width: 60%;
+		margin: 20px auto;
+		padding: 15px;
+		background-color: #d3d3d3;
+		.fa, .votes {
+			position: absolute;
+			right: 15px;
+			font-size: 24px;
+			&.fa-chevron-up { top: 15px; }
+			&.fa-chevron-down { bottom: 15px; }
+		}
+		.votes { top: 40%; right: 20px; }
+		.timestamp { position: absolute; bottom: 15px; }
+	}
+}
