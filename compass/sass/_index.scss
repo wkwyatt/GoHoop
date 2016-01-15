@@ -18,10 +18,10 @@
 	}
 }
 
+.first-container { margin-top: 155px; }
 .post-wrapper {
 	width: 60%;
 	background-color: #fafafa;
-	margin: 155px auto 0;
 	.post-content {
 		position: relative;
 		height: 75px;
@@ -33,6 +33,7 @@
 			position: absolute;
 			right: 15px;
 			font-size: 24px;
+			color: $color;
 			&.fa-chevron-up { top: 15px; }
 			&.fa-chevron-down { bottom: 15px; }
 		}

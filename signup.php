@@ -9,6 +9,7 @@
 
 		$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
+
 		try {
 			DB::insert('users',array(
 				'name' => $username,
@@ -27,22 +28,36 @@
 	}
 	
 
-	if($_POST['login'] = "login"){
+	if($_POST['login'] == "login"){
 		$username = $_POST['user'];
 		$password = $_POST['pass'];
-
-		$hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
 		try {
-			DB::query('SELECT * FROM users WHERE name =%s0 AND pass =%s1', $username, $hashed_password);
+			$result = DB::query('SELECT * FROM users WHERE name=%s', $username);
+			if(sizeof($result) ==  1){
+				$hash = $result[0]['pass'];
+				$uid = $result[0]['uid'];
+				$passwordVerify = password_verify($password, $hash);
+print "pass: ".$password_verify;
+exit;
+				print (password_verify('x', '$2y$10$IzDDrUoMuwyjLzNEVcRoRednY1AO41cUc4owAhr9hi4i.r2QYQy0C'));
+				print "<br />";
+				print_r($hash);
+				print "<br />";
+				print_r($password);
+				print "<br />";
+exit;
+				if($passwordVerify){
+					print "inside if";
+					$_SESSION['username'] = $result['name'];
+					$_SESSION['uid'] = $result['uid'];
+					header('location: index.php?login=success');
+				}
+			}
+
 		} catch(MeekroDBException $e){
 			header('location: register.php?error=yes');
 			exit;
 		}
-
-		$_SESSION['username'] = $username;
-		$_SESSION['uid'] = DB::insertId();
-		header('location: index.php?login=success');
 	}
 
 	if($_POST['logout'] = "true"){

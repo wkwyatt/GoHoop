@@ -13,3 +13,22 @@ function init() {
     });
 }
 window.onload = init();
+
+$(document).ready(function() {
+    $('.follow-btn').click(function(){
+        var uid = $(this).attr('uid');
+        console.log(uid);
+        $.ajax({
+            url:"process_follow.php",
+            type:"post",
+            data: {uid: uid},
+            success: function(result){
+                console.log(result);
+                if(result == "Success!"){
+                    buttonToChange.removeClass('btn-primary');
+                    buttonToChange.addClass('btn-danger');
+                }
+            }
+        })
+    })
+});

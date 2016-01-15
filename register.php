@@ -1,5 +1,5 @@
 <?php
-
+include 'inc/db_connect.php';
 ?>
 
 <!DOCTYPE html>
