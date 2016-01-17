@@ -8,7 +8,7 @@ Basketball players who like to play pick up games sometimes have a hard time fin
  - Login / Signup Page for users to enter the site
 
 ## Screenshots
-![][login-pic]
+![](https://github.com/wkwyatt/GoHoop/blob/gh-readme/screenshots/login.png)
 
  ## Code
  I use AngularJS to show or hide the login and register page based on the button the user clicks
