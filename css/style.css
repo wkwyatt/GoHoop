@@ -1,20 +1,348 @@
-/* line 4, ../compass/sass/style.scss */
-* {
-  color: black;
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+/* line 3, ../compass/sass/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
 }
 
-/* line 6, ../compass/sass/style.scss */
+/* line 18, ../compass/sass/_reset.scss */
 body {
-  background: url("../images/basketballbg.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  font-family: 'Roboto', sans-serif;
+  line-height: 1;
 }
 
-/* line 15, ../compass/sass/style.scss */
-.login-wrapper {
+/* line 21, ../compass/sass/_reset.scss */
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-weight: normal;
+}
+
+/* line 25, ../compass/sass/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 28, ../compass/sass/_reset.scss */
+blockquote {
+  quotes: none;
+}
+
+/* line 31, ../compass/sass/_reset.scss */
+blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+
+/* line 35, ../compass/sass/_reset.scss */
+del {
+  text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+/* line 39, ../compass/sass/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 43, ../compass/sass/_reset.scss */
+a img {
+  border: none;
+}
+
+/* =Scss Variables
+-------------------------------------------------------------- */
+/* Header
+-------------------------------------------------------------- */
+/* line 3, ../compass/sass/_header.scss */
+#wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* line 7, ../compass/sass/_header.scss */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+/* line 11, ../compass/sass/_header.scss */
+.container a {
+  text-decoration: none;
+}
+
+/* line 15, ../compass/sass/_header.scss */
+section {
+  padding: 60px 0;
+}
+/* line 17, ../compass/sass/_header.scss */
+section h1 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+/* line 21, ../compass/sass/_header.scss */
+section p {
+  margin-bottom: 30px;
+}
+/* line 23, ../compass/sass/_header.scss */
+section p:last-child {
+  margin-bottom: 0;
+}
+/* line 27, ../compass/sass/_header.scss */
+section.color {
+  background-color: #3cb5f9;
+  color: white;
+}
+
+/* =Info Bar
+-------------------------------------------------------------- */
+/* line 35, ../compass/sass/_header.scss */
+#info-bar {
+  background-color: #3cb5f9;
+}
+/* line 37, ../compass/sass/_header.scss */
+#info-bar a {
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0;
+  padding: 10px;
+}
+/* line 44, ../compass/sass/_header.scss */
+#info-bar a:hover {
+  background-color: #0793e2;
+}
+/* line 48, ../compass/sass/_header.scss */
+#info-bar span.all-tutorials,
+#info-bar span.back-to-tutorial {
+  display: block;
+  width: 50%;
+}
+/* line 53, ../compass/sass/_header.scss */
+#info-bar span.all-tutorials {
+  float: left;
+  text-align: left;
+}
+/* line 57, ../compass/sass/_header.scss */
+#info-bar span.back-to-tutorial {
+  float: right;
+  text-align: right;
+}
+
+/* =Header
+-------------------------------------------------------------- */
+/* line 74, ../compass/sass/_header.scss */
+header {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #0683c9;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  -ms-transition: height 0.3s;
+  -o-transition: height 0.3s;
+  transition: height 0.3s;
+}
+/* line 88, ../compass/sass/_header.scss */
+header h1#logo {
+  display: inline-block;
+  height: 150px;
+  line-height: 150px;
+  float: left;
+  font-family: "Oswald", sans-serif;
+  font-size: 60px;
+  color: white;
+  font-weight: 400;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 103, ../compass/sass/_header.scss */
+header nav {
+  display: inline-block;
+  float: right;
+}
+/* line 106, ../compass/sass/_header.scss */
+header nav a, header nav button {
+  line-height: 150px;
+  margin-left: 20px;
+  color: #9fdbfc;
+  font-weight: 700;
+  font-size: 18px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 117, ../compass/sass/_header.scss */
+header nav a:hover, header nav button:hover {
+  color: white;
+}
+/* line 121, ../compass/sass/_header.scss */
+header nav button {
+  position: relative;
+  margin-top: 45px;
+  line-height: inherit;
+  padding: 15px 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: #9fdbfc;
+  border: none;
+}
+/* line 132, ../compass/sass/_header.scss */
+header.smaller {
+  height: 75px;
+}
+/* line 134, ../compass/sass/_header.scss */
+header.smaller h1#logo {
+  width: 150px;
+  height: 75px;
+  line-height: 75px;
+  font-size: 30px;
+}
+/* line 141, ../compass/sass/_header.scss */
+header.smaller nav a {
+  line-height: 75px;
+}
+
+/* =Extras
+-------------------------------------------------------------- */
+/* line 150, ../compass/sass/_header.scss */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+
+/* Media Queries
+-------------------------------------------------------------- */
+@media all and (max-width: 660px) {
+  /* =Header
+  -------------------------------------------------------------- */
+  /* line 164, ../compass/sass/_header.scss */
+  header h1#logo {
+    display: block;
+    float: none;
+    margin: 0 auto;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+  }
+  /* line 172, ../compass/sass/_header.scss */
+  header nav {
+    display: block;
+    float: none;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  /* line 178, ../compass/sass/_header.scss */
+  header nav a, header nav button {
+    line-height: 50px;
+    margin: 0 10px;
+  }
+  /* line 182, ../compass/sass/_header.scss */
+  header nav button {
+    margin-top: 15px;
+  }
+  /* line 184, ../compass/sass/_header.scss */
+  header.smaller {
+    height: 75px;
+  }
+  /* line 186, ../compass/sass/_header.scss */
+  header.smaller h1#logo {
+    height: 40px;
+    line-height: 40px;
+    font-size: 30px;
+  }
+  /* line 191, ../compass/sass/_header.scss */
+  header.smaller nav {
+    height: 35px;
+  }
+  /* line 193, ../compass/sass/_header.scss */
+  header.smaller nav a, header.smaller nav button {
+    line-height: 35px;
+  }
+  /* line 196, ../compass/sass/_header.scss */
+  header.smaller nav button {
+    margin-top: 15px;
+  }
+}
+@media all and (max-width: 600px) {
+  /* line 203, ../compass/sass/_header.scss */
+  .container {
+    width: 100%;
+  }
+
+  /* line 207, ../compass/sass/_header.scss */
+  #info-bar a {
+    display: block;
+  }
+  /* line 210, ../compass/sass/_header.scss */
+  #info-bar span.all-tutorials,
+  #info-bar span.back-to-tutorial {
+    width: 100%;
+  }
+  /* line 214, ../compass/sass/_header.scss */
+  #info-bar span.all-tutorials,
+  #info-bar span.back-to-tutorial {
+    float: none;
+    text-align: center;
+  }
+  /* line 219, ../compass/sass/_header.scss */
+  #info-bar span.all-tutorials {
+    border-bottom: solid 1px #0793e2;
+  }
+}
+/* line 1, ../compass/sass/_footer.scss */
+footer {
+  height: 75px;
+  bottom: 0;
+  background-color: #0683c9;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+/* line 8, ../compass/sass/_footer.scss */
+footer .container {
+  position: absolute;
+}
+/* line 9, ../compass/sass/_footer.scss */
+footer ul {
+  margin: 25px auto 0;
+}
+/* line 11, ../compass/sass/_footer.scss */
+footer ul li {
+  list-style: none;
+  display: inline-block;
+  font-weight: 300;
+  padding: 0 20px;
+  color: white;
+}
+
+/* line 3, ../compass/sass/_register.scss */
+.login-wrapper, .post-wrapper {
   padding: 40px;
   width: 274px;
   background-color: #F7F7F7;
@@ -23,21 +351,21 @@ body {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
-/* line 23, ../compass/sass/style.scss */
-.login-wrapper h1 {
+/* line 11, ../compass/sass/_register.scss */
+.login-wrapper h1, .post-wrapper h1 {
   font-weight: 100;
   text-align: center;
   font-size: 2.3em;
 }
-/* line 28, ../compass/sass/style.scss */
-.login-wrapper input[type=submit] {
+/* line 16, ../compass/sass/_register.scss */
+.login-wrapper input[type=submit], .post-wrapper input[type=submit] {
   width: 100%;
   display: block;
   margin-bottom: 10px;
   position: relative;
 }
-/* line 34, ../compass/sass/style.scss */
-.login-wrapper input[type=text], .login-wrapper input[type=password] {
+/* line 22, ../compass/sass/_register.scss */
+.login-wrapper input[type=text], .login-wrapper input[type=password], .login-wrapper textarea, .post-wrapper input[type=text], .post-wrapper input[type=password], .post-wrapper textarea {
   height: 44px;
   font-size: 16px;
   width: 100%;
@@ -51,27 +379,32 @@ body {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-/* line 48, ../compass/sass/style.scss */
-.login-wrapper input[type=text]:hover, .login-wrapper input[type=password]:hover {
+/* line 36, ../compass/sass/_register.scss */
+.login-wrapper input[type=text]:hover, .login-wrapper input[type=password]:hover, .login-wrapper textarea, .post-wrapper input[type=text]:hover, .post-wrapper input[type=password]:hover, .post-wrapper textarea {
   border: 1px solid #b9b9b9;
   border-top: 1px solid #a0a0a0;
   -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-/* line 55, ../compass/sass/style.scss */
-.login-wrapper #login-header {
+/* line 43, ../compass/sass/_register.scss */
+.login-wrapper textarea, .post-wrapper textarea {
+  height: auto;
+  border-radius: 4px;
+}
+/* line 44, ../compass/sass/_register.scss */
+.login-wrapper #login-header, .login-wrapper #post-header, .post-wrapper #login-header, .post-wrapper #post-header {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: 300;
 }
-/* line 61, ../compass/sass/style.scss */
-.login-wrapper #login-form, .login-wrapper #signup-form {
+/* line 50, ../compass/sass/_register.scss */
+.login-wrapper #login-form, .login-wrapper #signup-form, .post-wrapper #login-form, .post-wrapper #signup-form {
   text-align: center;
 }
-/* line 64, ../compass/sass/style.scss */
-.login-wrapper .login {
+/* line 53, ../compass/sass/_register.scss */
+.login-wrapper .login, .login-wrapper .post, .post-wrapper .login, .post-wrapper .post {
   text-align: center;
   font-size: 14px;
   font-family: 'Arial', sans-serif;
@@ -79,21 +412,21 @@ body {
   height: 36px;
   padding: 0 8px;
 }
-/* line 72, ../compass/sass/style.scss */
-.login-wrapper .login-submit {
+/* line 61, ../compass/sass/_register.scss */
+.login-wrapper .login-submit, .login-wrapper .post-submit, .post-wrapper .login-submit, .post-wrapper .post-submit {
   border: 0px;
   color: #fff;
   text-shadow: 0 1px rgba(0, 0, 0, 0.1);
   background-color: #4d90fe;
 }
-/* line 77, ../compass/sass/style.scss */
-.login-wrapper .login-submit:hover {
+/* line 66, ../compass/sass/_register.scss */
+.login-wrapper .login-submit:hover, .login-wrapper .post-submit:hover, .post-wrapper .login-submit:hover, .post-wrapper .post-submit:hover {
   border: 0px;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   background-color: #357ae8;
 }
-/* line 82, ../compass/sass/style.scss */
-.login-wrapper .login-submit a {
+/* line 71, ../compass/sass/_register.scss */
+.login-wrapper .login-submit a, .login-wrapper .post-submit a, .post-wrapper .login-submit a, .post-wrapper .post-submit a {
   text-decoration: none;
   color: #666;
   font-weight: 400;
@@ -102,18 +435,123 @@ body {
   opacity: 0.6;
   transition: opacity ease 0.5s;
 }
-/* line 90, ../compass/sass/style.scss */
-.login-wrapper .login-submit a:hover {
+/* line 79, ../compass/sass/_register.scss */
+.login-wrapper .login-submit a:hover, .login-wrapper .post-submit a:hover, .post-wrapper .login-submit a:hover, .post-wrapper .post-submit a:hover {
   opacity: 1;
 }
-/* line 93, ../compass/sass/style.scss */
-.login-wrapper .login-help {
+/* line 82, ../compass/sass/_register.scss */
+.login-wrapper .login-help, .post-wrapper .login-help {
   width: 100%;
   text-align: center;
   font-size: 12px;
   margin-top: 20px;
 }
-/* line 98, ../compass/sass/style.scss */
-.login-wrapper .login-help a {
+/* line 87, ../compass/sass/_register.scss */
+.login-wrapper .login-help a, .post-wrapper .login-help a {
   padding: 0px 10px;
+}
+
+/* line 90, ../compass/sass/_register.scss */
+.post-wrapper {
+  width: 450px;
+}
+
+/* line 1, ../compass/sass/_index.scss */
+.hero {
+  width: 90%;
+  margin: 205px auto 50px;
+  padding: 45px;
+  background: rgba(255, 255, 255, 0.9);
+  height: 85px;
+  text-align: center;
+}
+/* line 8, ../compass/sass/_index.scss */
+.hero button {
+  position: relative;
+  margin: 20px auto 0;
+  line-height: inherit;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-size: 24px;
+  color: white;
+  background-color: #3cb5f9;
+  border: none;
+}
+
+/* line 21, ../compass/sass/_index.scss */
+.first-container {
+  margin-top: 155px;
+}
+
+/* line 22, ../compass/sass/_index.scss */
+.post-wrapper {
+  width: 60%;
+  background-color: #fafafa;
+}
+/* line 25, ../compass/sass/_index.scss */
+.post-wrapper .post-content {
+  position: relative;
+  height: 75px;
+  width: 60%;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #d3d3d3;
+}
+/* line 32, ../compass/sass/_index.scss */
+.post-wrapper .post-content .fa, .post-wrapper .post-content .votes {
+  position: absolute;
+  right: 15px;
+  font-size: 24px;
+  color: #3cb5f9;
+}
+/* line 37, ../compass/sass/_index.scss */
+.post-wrapper .post-content .fa.fa-chevron-up, .post-wrapper .post-content .votes.fa-chevron-up {
+  top: 15px;
+}
+/* line 38, ../compass/sass/_index.scss */
+.post-wrapper .post-content .fa.fa-chevron-down, .post-wrapper .post-content .votes.fa-chevron-down {
+  bottom: 15px;
+}
+/* line 40, ../compass/sass/_index.scss */
+.post-wrapper .post-content .votes {
+  top: 40%;
+  right: 20px;
+}
+/* line 41, ../compass/sass/_index.scss */
+.post-wrapper .post-content .timestamp {
+  position: absolute;
+  bottom: 15px;
+}
+
+/* line 10, ../compass/sass/style.scss */
+* {
+  color: black;
+}
+
+/* line 12, ../compass/sass/style.scss */
+body {
+  background: url("../images/basketballbg.jpg") no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Headings */
+/* line 22, ../compass/sass/style.scss */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  font-weight: 300;
+}
+
+/* line 26, ../compass/sass/style.scss */
+a {
+  text-decoration: none;
+  color: #3cb5f9;
+}
+
+/* line 30, ../compass/sass/style.scss */
+a:hover {
+  color: #0793e2;
 }

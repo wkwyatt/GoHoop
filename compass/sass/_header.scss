@@ -1,0 +1,223 @@
+/* Header
+-------------------------------------------------------------- */
+#wrapper {
+    width:100%;
+    margin:0 auto;
+}
+.container {
+    width:80%;
+    margin:0 auto;
+    padding:0 30px;
+    a {
+    	text-decoration: none;
+    }
+}
+section {
+	padding:60px 0;
+	h1 {
+		font-weight:700;
+		margin-bottom:10px;
+	}
+	p {
+		margin-bottom:30px;
+		&:last-child {
+			margin-bottom:0
+		}
+	}
+	&.color {
+		background-color:$color;
+		color:$white;
+	}
+}
+
+/* =Info Bar
+-------------------------------------------------------------- */
+#info-bar {
+	background-color:$color;
+	a {
+		color:$white;
+		font-size:14px;
+		text-transform:uppercase;
+		display:inline-block;
+		margin:0;
+		padding:10px;
+		&:hover{
+			background-color:darken($color, 15%);
+		}
+	}
+	span.all-tutorials,
+	span.back-to-tutorial {
+		display:block;
+		width:50%;
+	}
+	span.all-tutorials {
+		float:left;
+		text-align:left;
+	}
+	span.back-to-tutorial {
+		float:right;
+		text-align:right;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/* =Header
+-------------------------------------------------------------- */
+header {
+	width:100%;
+	height:150px;
+	overflow: hidden;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:999;
+	background-color:darken($color, 20%);
+	-webkit-transition:height 0.3s;
+	-moz-transition:height 0.3s;
+	-ms-transition:height 0.3s;
+	-o-transition:height 0.3s;
+	transition:height 0.3s;
+	h1#logo {
+		display:inline-block;
+		height:150px;
+		line-height: 150px;
+		float:left;
+		font-family:$font-heading;
+		font-size: 60px;
+		color:$white;
+		font-weight: 400;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		-ms-transition: all 0.3s;
+		-o-transition: all 0.3s;
+		transition: all 0.3s;
+	}
+	nav {
+		display:inline-block;
+		float:right;
+		a, button {
+			line-height: 150px;
+			margin-left:20px;
+			color:lighten($color, 20%);
+			font-weight:700;
+			font-size:18px;
+			-webkit-transition: all 0.3s;
+			-moz-transition: all 0.3s;
+			-ms-transition: all 0.3s;
+			-o-transition: all 0.3s;
+			transition: all 0.3s;
+			&:hover {
+				color:$white;
+			}
+		}
+		button { 
+			position: relative;
+			margin-top: 45px;
+			line-height: inherit;
+			padding: 15px 10px;
+			border-radius: 5px;
+			color: white;
+			background-color: lighten($color, 20%);
+			border: none;
+		}
+	}
+	&.smaller {
+		height:75px;
+		h1#logo {
+			width:150px;
+			height:75px;
+			line-height:75px;
+			font-size:30px;
+		}
+		nav {
+			a {
+				line-height:75px;
+			}
+		}
+	}
+}
+
+/* =Extras
+-------------------------------------------------------------- */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+/* Media Queries
+-------------------------------------------------------------- */
+@media all and (max-width: 660px) {
+	/* =Header
+	-------------------------------------------------------------- */
+	header {
+		h1#logo {
+			display:block;
+			float:none;
+			margin:0 auto;
+			height:100px;
+			line-height: 100px;
+			text-align: center;
+		}
+		nav {
+			display:block;
+			float:none;
+			height:50px;
+			text-align: center;
+			margin:0 auto;
+			a, button {
+				line-height: 50px;
+				margin:0 10px;
+			}
+			button { margin-top: 15px; }
+		}
+		&.smaller {
+			height:75px;
+			h1#logo {
+				height:40px;
+				line-height:40px;
+				font-size:30px;
+			}
+			nav {
+				height:35px;
+				a, button {
+					line-height:35px;
+				}
+				button { margin-top: 15px; }
+			}
+		}
+	}
+}
+
+@media all and (max-width: 600px) {
+	.container {
+		width:100%;
+	}
+	#info-bar {
+		a {
+			display: block;
+		}
+		span.all-tutorials,
+		span.back-to-tutorial {
+			width:100%;
+		}
+		span.all-tutorials,
+		span.back-to-tutorial {
+			float:none;
+			text-align:center;
+		}
+		span.all-tutorials {
+			border-bottom:solid 1px darken($color, 15%);
+		}
+	}
+}
