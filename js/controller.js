@@ -1,7 +1,7 @@
 var app = angular.module('goHoopApp', []);
 
-app.controller('loginCntrl', ['$scope', function ($scope){
-	$scope.signup = false;
+app.controller('registerCntrl', ['$scope', function ($scope){
+	$scope.signup = registerUser;
 }]);
 
 app.controller('headerCntrl', ['$scope', '$http', function ($scope, $http){
@@ -11,4 +11,8 @@ app.controller('headerCntrl', ['$scope', '$http', function ($scope, $http){
 		$http.post('signup.php', {logout: 'true'});
 		$scope.login = false;
 	}
+}]);
+
+app.controller('indexCntrl', ['$scope', function ($scope){
+
 }]);

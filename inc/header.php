@@ -1,12 +1,7 @@
 <script type="text/javascript"> var verifyLogin = false; </script>
-<?php 
-include 'inc/db_connect.php'; 
-if(isset($_SESSION['username'])):
-?>
-<script type="text/javascript"> verifyLogin = true; </script>
-<?php 
-endif;
-?>
+<?php if(isset($_SESSION['uid'])): ?>
+    <script type="text/javascript"> verifyLogin = true; </script>
+<?php endif; ?>
 
 <header ng-controller="headerCntrl">
     <div class="container clearfix">
@@ -14,12 +9,12 @@ endif;
             GoHoop
         </h1></a>
         <nav ng-show="login">
-            <a href="">Welcome, <?php echo $_SESSION['username']?></a>
-            <a ng-click="logout()">Logout</a>
+            <a href="#">Welcome, <?php echo $_SESSION['username']?></a>
+            <a href="#" ng-click="logout()">Logout</a>
         </nav>
         <nav ng-hide="login">
-        	<button>Login</button>
-        	<button>Sign Up</button>
+        	<a href="register.php"><button>Login</button></a>
+        	<a href="register.php?register=true"><button>Sign Up</button></a>
         </nav>
     </div>
 </header>

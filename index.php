@@ -1,13 +1,7 @@
 <?php
 include 'inc/db_connect.php';
-print_r($_SESSION);
-exit;
-// if(!isset($_SESSION['username'])){ 
-// 	header("location: register.php"); 
-// 	exit;
-// }
 
-if($_GET['logout'] == 'true') {
+if(isset($_GET['logout'])) {
 	session_destroy();
 }
 
@@ -19,9 +13,9 @@ if($_GET['logout'] == 'true') {
 	<title>GoHoop</title>
 	<?php include('inc/head.php') ?>
 </head>
-<body ng-controller="loginCntrl">
+<body>
 	<?php include 'inc/header.php'; ?>
-	<div ng-controller="">
+	<div ng-controller="indexCntrl">
 		<div id="main" class="hero">
 			<h2>Easily find good basketball runs near you.  Up vote players, runs, and posts. Find somewhere to go hoop!</h2>
 			<button id="post-btn">Post</button>
@@ -34,8 +28,33 @@ if($_GET['logout'] == 'true') {
 						LEFT JOIN users ON posts.uid = users.uid
 						ORDER BY posts.timestamp desc limit 30");
 				// not we have a maxof 30 results by timestamp
+			} else {
+				// print_r($_SESSION['uid']);
+				// exit;
+				$followed_users = DB::query("SELECT distinct(user_id) FROM following f WHERE f.subscriber=%i", $_SESSION['uid']);
+
+				$last = count($followed_users);
+
+				if($last > 0){
+					$i = 0;
+					$followed_users_array = '';
+					foreach ($followed_users as $following) {
+						$i++;
+						$followed_users_array .= $following['user_id'];
+						if($i != $last) { $followed_users_array .= ','; }
+					}
+					
+					$posts = DB::query(
+					"SELECT posts.content, posts.timestamp, users.name FROM posts
+						LEFT JOIN users ON posts.uid = users.uid
+						WHERE posts.uid IN ($followed_users_array)
+						ORDER BY posts.timestamp desc limit 30");
+				} 
+
+			}
+		
 				foreach ($posts as $post) {
-					print '<div class="post-content" >';
+					print '<div class="post-content">';
 						print '<p class="posting-user">'.$post['name'].'</p>';
 						print '<p class="post-comment">'.$post['content'].'</p>';
 						print '<p class="timestamp">'.$post['timestamp'].'</p>';
@@ -44,7 +63,6 @@ if($_GET['logout'] == 'true') {
 						print '<i class="fa fa-chevron-down"></i>';
 					print '</div>';
 				}
-			}
 		?>
 			<div class="post-content">
 				<p>Test content1</p>
