@@ -1,17 +1,5 @@
 <?php
 include 'inc/db_connect.php';
-// if(!isset($_SESSION['username'])){ 
-// 	header("location: register.php"); 
-// 	exit;
-// }
-
-// if(isset($_SESSION['uid'])){ 
-// 	print "<pre>";
-// 	print_r($_SESSION['uid']); 
-// 	exit;
-// } else {
-// 	$_SESSION['uid'] = '2';
-// }
 
 if(isset($_GET['logout'])) {
 	session_destroy();
@@ -25,9 +13,9 @@ if(isset($_GET['logout'])) {
 	<title>GoHoop</title>
 	<?php include('inc/head.php') ?>
 </head>
-<body ng-controller="loginCntrl">
+<body>
 	<?php include 'inc/header.php'; ?>
-	<div ng-controller="">
+	<div ng-controller="indexCntrl">
 		<div id="main" class="hero">
 			<h2>Easily find good basketball runs near you.  Up vote players, runs, and posts. Find somewhere to go hoop!</h2>
 			<button id="post-btn">Post</button>
@@ -66,7 +54,7 @@ if(isset($_GET['logout'])) {
 			}
 		
 				foreach ($posts as $post) {
-					print '<div class="post-content" >';
+					print '<div class="post-content">';
 						print '<p class="posting-user">'.$post['name'].'</p>';
 						print '<p class="post-comment">'.$post['content'].'</p>';
 						print '<p class="timestamp">'.$post['timestamp'].'</p>';

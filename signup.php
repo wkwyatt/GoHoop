@@ -9,7 +9,6 @@
 
 		$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-
 		try {
 			DB::insert('users',array(
 				'name' => $username,
@@ -33,9 +32,9 @@
 		$password = $_POST['pass'];
 		try {
 			$result = DB::query('SELECT * FROM users WHERE name=%s', $username);
-			if(sizeof($result) ==  1){
-				$hash = $result[0]['pass'];
-				$uid = $result[0]['uid'];
+			foreach($result as $row){
+				$hash = $row['pass'];
+				$uid = $row['uid'];
 				$passwordVerify = password_verify($password, $hash);
 print "pass: ".$passwordVerify;
 exit;
