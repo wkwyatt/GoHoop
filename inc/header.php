@@ -1,7 +1,7 @@
 <script type="text/javascript"> var verifyLogin = false; </script>
 <?php 
 include 'inc/db_connect.php'; 
-if(isset($_SESSION['username'])):
+if(isset($_SESSION['uid']) && isset($_SESSION['username'])):
 ?>
 <script type="text/javascript"> verifyLogin = true; </script>
 <?php 
@@ -14,12 +14,12 @@ endif;
             GoHoop
         </h1></a>
         <nav ng-show="login">
-            <a href="">Welcome, <?php echo $_SESSION['username']?></a>
-            <a ng-click="logout()">Logout</a>
+            <a href="#">Welcome, <?php echo $_SESSION['username']?></a>
+            <a href="#" ng-click="logout()">Logout</a>
         </nav>
         <nav ng-hide="login">
-        	<button>Login</button>
-        	<button>Sign Up</button>
+        	<button href="register.php">Login</button>
+        	<button href="register.php">Sign Up</button>
         </nav>
     </div>
 </header>

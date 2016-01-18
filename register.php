@@ -28,7 +28,7 @@ include 'inc/db_connect.php';
 				<input type="text" name="user" value="" placeholder="Username">
 				<input type="password" name="password" value="" placeholder="Password">
 				<input type="password" name="confPass" value="" placeholder="Confirm Password">
-				<button type="submit" name="signin" class="login login-submit" value="signin">Signup</button>
+				<button type="submit" name="signup" class="login login-submit" value="signup">Signup</button>
 				<div class="login-help">
 					<a ng-click="signup = false">Login</a><a href="#">Forgot Password</a>
 				</div>
