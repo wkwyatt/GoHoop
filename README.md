@@ -32,8 +32,6 @@ I didn't include the local file to Angular or JQuery, make sure to add these CDN
 	* https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js
 
 ## Bugs 
-* session start being ignored on page load
 * navigation header does not resize (check script.js for errors)
-* login does not unhash password correctly
 
 [login-pic]:(https://github.com/wkwyatt/GoHoop/blob/gh-readme/screenshots/login.png)

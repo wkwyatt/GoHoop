@@ -1,6 +1,6 @@
 <?php
 
-	include("inc/db_connect.php"); 
+	require_once("inc/db_connect.php"); 
 
 	if(isset($_POST['signup']) && $_POST['signup'] == "signup") {
 		$username = $_POST['user'];
@@ -41,6 +41,7 @@
 					$_SESSION['username'] = $row['name'];
 					$_SESSION['uid'] = $row['uid'];
 					header('location: index.php?login=success');
+					exit;
 				} else {
 					header('location: register.php?error=nomatch');
 				}

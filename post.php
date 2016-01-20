@@ -13,7 +13,7 @@ exit;
 </head>
 <body>
 	<?php include 'inc/header.php' ?>
-	<div class="post-wrapper container">
+	<div class="new-post-wrapper container">
 		<form action="submit_post.php" method="post">
 			<div class="form-group">
 				<label id="post-header" for="comment">POST</label>

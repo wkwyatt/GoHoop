@@ -11,16 +11,16 @@ if(isset($_GET['logout'])) {
 <html ng-app="goHoopApp">
 <head>
 	<title>GoHoop</title>
-	<?php include('inc/head.php') ?>
+	<?php include_once('inc/head.php') ?>
 </head>
 <body>
-	<?php include 'inc/header.php'; ?>
+	<?php include_once('inc/header.php'); ?>
 	<div ng-controller="indexCntrl">
 		<div id="main" class="hero">
 			<h2>Easily find good basketball runs near you.  Up vote players, runs, and posts. Find somewhere to go hoop!</h2>
 			<button id="post-btn">Post</button>
 		</div>
-		<div class="post-wrapper">
+		<div id="live-feed" class="post-wrapper">
 		<?php
 			if(!isset($_SESSION['uid'])){
 				$posts = DB::query(

@@ -1,3 +1,10 @@
+<?php
+
+// print_r($_SESSION);
+// exit;
+
+?>
+
 <script type="text/javascript"> var verifyLogin = false; </script>
 <?php if(isset($_SESSION['uid'])): ?>
     <script type="text/javascript"> verifyLogin = true; </script>
@@ -8,7 +15,7 @@
         <a href="index.php"><h1 id="logo">
             GoHoop
         </h1></a>
-        <nav ng-show="login">
+        <nav ng-show="login" id="welcome-msg">
             <a href="#">Welcome, <?php echo $_SESSION['username']?></a>
             <a href="#" ng-click="logout()">Logout</a>
         </nav>
