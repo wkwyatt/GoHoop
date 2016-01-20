@@ -36,6 +36,10 @@
 				$hash = $row['pass'];
 				$uid = $row['uid'];
 				$passwordVerify = password_verify($password, $hash);
+print_r($hash);
+print "<br />";
+print_r($password);
+print "<br />";
 print "pass: ".$passwordVerify;
 exit;
 // 				print (password_verify('x', '$2y$10$IzDDrUoMuwyjLzNEVcRoRednY1AO41cUc4owAhr9hi4i.r2QYQy0C'));
@@ -50,11 +54,13 @@ exit;
 					$_SESSION['username'] = $result['name'];
 					$_SESSION['uid'] = $result['uid'];
 					header('location: index.php?login=success');
+				} else {
+					header('location: register.php?error=nomatch')
 				}
 			}
 
 		} catch(MeekroDBException $e){
-			header('location: register.php?error=yes');
+			header('location: register.php?error=meekro');
 			exit;
 		}
 	}

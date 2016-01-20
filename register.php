@@ -1,6 +1,6 @@
 <script type="text/javascript"> var registerUser = false; </script>
 <?php
-include 'inc/db_connect.php';
+require_once('inc/db_connect.php');
 
 if(isset($_GET['logout'])) {
 	session_destroy();
