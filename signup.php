@@ -4,7 +4,7 @@
 
 	if(isset($_POST['signup']) && $_POST['signup'] == "signup") {
 		$username = $_POST['user'];
-		$password = $_POST['pass'];
+		$password = $_POST['password'];
 		$email = $_POST['email'];
 
 		$hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -36,26 +36,13 @@
 				$hash = $row['pass'];
 				$uid = $row['uid'];
 				$passwordVerify = password_verify($password, $hash);
-print_r($hash);
-print "<br />";
-print_r($password);
-print "<br />";
-print "pass: ".$passwordVerify;
-exit;
-// 				print (password_verify('x', '$2y$10$IzDDrUoMuwyjLzNEVcRoRednY1AO41cUc4owAhr9hi4i.r2QYQy0C'));
-// 				print "<br />";
-// 				print_r($hash);
-// 				print "<br />";
-// 				print_r($password);
-// 				print "<br />";
-// exit;
+
 				if($passwordVerify){
-					print "inside if";
-					$_SESSION['username'] = $result['name'];
-					$_SESSION['uid'] = $result['uid'];
+					$_SESSION['username'] = $row['name'];
+					$_SESSION['uid'] = $row['uid'];
 					header('location: index.php?login=success');
 				} else {
-					header('location: register.php?error=nomatch')
+					header('location: register.php?error=nomatch');
 				}
 			}
 

@@ -1,4 +1,9 @@
-<?php include 'inc/db_connect.php' ?>
+<?php 
+require_once('inc/db_connect.php');
+print "<pre>";
+print_r($_SESSION);
+exit;
+ ?>
 
 <!DOCTYPE html>
 <html>
